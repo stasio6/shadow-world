@@ -7,23 +7,19 @@ public class Player : MonoBehaviour
     public float jumpSpeed;
     public float jumpHeight;
 
-    private float upVelocity;
-    private bool jumping;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         rb.gravityScale = jumpSpeed;
-        upVelocity = 0;
-        jumping = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Vertical move
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && IsGrounded()) {
             Jump();
         }
 
@@ -32,9 +28,27 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(speed * movementHorizontal, rb.velocity.y);
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Spikes")
+        {
+            Death();
+        }
+    }
+
     void Jump() {
         float jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics2D.gravity.y * jumpSpeed));
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        jumping = true;
+    }
+
+    bool IsGrounded()
+    {
+        return rb.velocity.y == 0;
+    }
+
+    void Death()
+    {
+        gameObject.SetActive(false);
+        // TODO: Add "Game Over" screen.
     }
 }

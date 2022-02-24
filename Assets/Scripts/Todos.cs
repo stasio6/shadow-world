@@ -5,6 +5,9 @@ using UnityEngine;
 //  - Mario style jumps (faster fall)
 //  - Off edge security (last second jump)
 
+// TODO: Add "Game Over" screen.
+// TODO: Fix errors after player dies.
+
 namespace Assets.Scripts
 {
     public class Todos : ScriptableObject
