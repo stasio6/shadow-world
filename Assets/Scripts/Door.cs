@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public float distanceToInteract;
+    public bool isShadow;
 
     // Start is called before the first frame update
     void Start()
@@ -15,26 +16,34 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TODO: Fix errors after player dies.
-        Player player = GameObject.Find("Player").GetComponent<Player>();
-        float distanceFromPlayer = Vector2.Distance(player.transform.position, transform.position);
-        // TODO: Also calculate distance from second door to second player
-        if (distanceFromPlayer <= distanceToInteract)
+        if (!isShadow)
         {
-            transform.Find("InteractKey").gameObject.SetActive(true);
-            if (Input.GetButtonDown("Interact"))
+            // TODO: Fix errors after player dies.
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            float distanceFromPlayer = Vector2.Distance(player.transform.position, transform.position);
+
+            // Shadow distance
+            Player shadowPlayer = GameObject.Find("Shadow Player").GetComponent<Player>();
+            Door   shadowDoor   = GameObject.Find("Shadow Door").GetComponent<Door>();
+            float distanceFromShadowPlayer = Vector2.Distance(shadowPlayer.transform.position, shadowDoor.transform.position);
+
+            if (distanceFromPlayer <= distanceToInteract && distanceFromShadowPlayer <= distanceToInteract)
             {
-                Interact();
+                transform.Find("InteractKey").gameObject.SetActive(true);
+                if (Utilities.GetInput("Interact"))
+                {
+                    Interact();
+                }
             }
-        }
-        else
-        {
-            transform.Find("InteractKey").gameObject.SetActive(false);
+            else
+            {
+                transform.Find("InteractKey").gameObject.SetActive(false);
+            }
         }
     }
 
     void Interact()
     {
-        Debug.Log("Game ended");
+        UIManager.GetInstance().Victory();
     }
 }

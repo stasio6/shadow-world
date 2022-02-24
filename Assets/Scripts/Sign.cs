@@ -22,7 +22,7 @@ public class Sign : MonoBehaviour
         if (distanceFromPlayer <= distanceToInteract)
         {
             transform.Find("InteractKey").gameObject.SetActive(true);
-            if (Input.GetButtonDown("Interact"))
+            if (Utilities.GetInput("Interact"))
             {
                 Interact();
             }
@@ -35,7 +35,6 @@ public class Sign : MonoBehaviour
 
     void Interact()
     {
-        Debug.Log("Sign interacted");
-        Debug.Log(message);
+        UIManager.GetInstance().ShowSignText(message);
     }
 }

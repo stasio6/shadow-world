@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public float speed;
     public float jumpSpeed;
     public float jumpHeight;
+    public bool isShadow;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -18,14 +19,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // TODO: Make player not jump when paused
         // Vertical move
-        if (Input.GetButtonDown("Jump") && IsGrounded()) {
+        
+        if (Utilities.GetInput("Jump", false) && IsGrounded()) {
             Jump();
         }
 
         // Horizontal move
         float movementHorizontal = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(speed * movementHorizontal, rb.velocity.y);
+        //Debug.Log(movementHorizontal);
+        //Debug.Log(rb.velocity);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -49,6 +54,6 @@ public class Player : MonoBehaviour
     void Death()
     {
         gameObject.SetActive(false);
-        // TODO: Add "Game Over" screen.
+        UIManager.GetInstance().GameOver();
     }
 }
