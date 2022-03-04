@@ -35,6 +35,7 @@ public class Sign : MonoBehaviour
 
     void Interact()
     {
+        GetComponent<AudioSource>().Play();
         UIManager.GetInstance().ShowSignText(message);
     }
 }

@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
-        else
+        else if (rb.velocity.x > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
@@ -140,7 +140,11 @@ public class Player : MonoBehaviour
 
     void Death()
     {
-        gameObject.SetActive(false);
+        // TODO: Make sure.
+        // gameObject.SetActive(false);
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        transform.position = new Vector3(-100, -100, -100);
+        GetComponent<AudioSource>().Play();
         UIManager.GetInstance().GameOver();
     }
 }

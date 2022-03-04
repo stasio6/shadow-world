@@ -23,12 +23,24 @@ public class UIManager : MonoBehaviour
         return _instance;
     }
 
-    string[] levels = new string[] { "Level1-1", "Level1-2", "Level1-3", "Level1-4", "Level1-5", "Level1-6", "Level1-7", "Level1-8",
-                                     "Level2-1", "Level2-2", "Level2-3", "Level2-4", "Level2-5", "Level2-6", "Level2-7", "Level2-8",
-                                     "Level3-1", "Level3-2", "Level3-3", "Level3-4", "Level3-5", "Level3-6", "Level3-7", "Level3-8",
-                                     "Level4-1", "Level4-2", "Level4-3", "Level4-4", "Level4-5", "Level4-6", "Level4-7", "Level4-8",
-                                     "credits"
+    public AudioClip restartAudio;
+    public AudioClip clickAudio;
+    AudioSource audioSource;
+
+    string[] levels = new string[] { 
+                                     "Main Menu",
+                                     "Level1-1", "Level1-2", "Level1-3", /*"Level1-4",*/ "Level1-5", // "Level1-6", // "Level1-7", "Level1-8",
+                                     // "Level2-1", "Level2-2", "Level2-3", "Level2-4", "Level2-5", "Level2-6", "Level2-7", "Level2-8",
+                                     // "Level3-1", "Level3-2", "Level3-3", "Level3-4", "Level3-5", "Level3-6", "Level3-7", "Level3-8",
+                                     // "Level4-1", "Level4-2", "Level4-3", "Level4-4", "Level4-5", "Level4-6", "Level4-7", "Level4-8",
+                                     "Victory Credits"
     };
+
+    string NextLevel()
+    {
+        string currentLevel = SceneManager.GetActiveScene().name;
+        return levels[Array.FindIndex(levels, element => element == currentLevel) + 1];
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +48,8 @@ public class UIManager : MonoBehaviour
         uiStatus = UIStatus.Gameplay;
         _instance = this;
         ScaleComponents(this.gameObject);
+        audioSource = GetComponent<AudioSource>();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -86,7 +100,7 @@ public class UIManager : MonoBehaviour
                     if (Input.GetButtonDown("Jump"))
                     {
                         Resume();
-                        SceneManager.LoadScene(NextLevel(SceneManager.GetActiveScene().name));
+                        LoadLevel(NextLevel());
                     }
                     break;
                 }
@@ -102,8 +116,6 @@ public class UIManager : MonoBehaviour
     {
         if (gameObject.name == "SignBackground")
         {
-            Debug.Log(gameObject.transform.GetComponent<RectTransform>().localScale);
-            Debug.Log(UnityEngine.Camera.main.orthographicSize);
             RectTransform rectTransform = gameObject.transform.GetComponent<RectTransform>();
             rectTransform.localScale *= UnityEngine.Camera.main.orthographicSize / 10;
             rectTransform.localScale.Set(rectTransform.localScale.x, rectTransform.localScale.y, 2);
@@ -155,21 +167,21 @@ public class UIManager : MonoBehaviour
 
     public void Restart()
     {
+        // TODO: Not working when called from menu.
+        AudioSource.PlayClipAtPoint(restartAudio, new Vector3(), 1);
+        DontDestroyOnLoad(GameObject.Find("One shot audio"));
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Resume();
     }
 
-    public void LevelSelect()
+    public void LoadLevel(string level)
     {
+        Audio.Instance().UpdateSoundtrack(level);
+        SceneManager.LoadScene(level);
     }
 
-    public void MainMenu()
+    public void Quit()
     {
-    }
-
-    public string NextLevel(string currentLevel)
-    {
-        Debug.Log(levels[Array.FindIndex(levels, element => element == currentLevel) + 1]);
-        return levels[Array.FindIndex(levels, element => element == currentLevel) + 1];
+        Application.Quit();
     }
 }

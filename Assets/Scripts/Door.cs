@@ -44,6 +44,7 @@ public class Door : MonoBehaviour
 
     void Interact()
     {
+        GetComponent<AudioSource>().Play();
         UIManager.GetInstance().Victory();
     }
 }
