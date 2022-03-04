@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7205308672462971806}
   - component: {fileID: 1220633077105827968}
   - component: {fileID: 1270842678978830231}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassCliffMid (1)
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,9 +120,9 @@ GameObject:
   - component: {fileID: 2060007815886528375}
   - component: {fileID: 719808673700626561}
   - component: {fileID: 7414236031262935471}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassCliffMid (3)
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,9 +229,9 @@ GameObject:
   - component: {fileID: 3567423367112418263}
   - component: {fileID: 3567423367112418262}
   - component: {fileID: 3567423367112418260}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassCliffMid
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,9 +338,9 @@ GameObject:
   - component: {fileID: 116835851180149882}
   - component: {fileID: 6312653608088313553}
   - component: {fileID: 5006770664058988525}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassCliffMid (5)
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,9 +447,9 @@ GameObject:
   - component: {fileID: 7791309417458659256}
   - component: {fileID: 8115371217198946709}
   - component: {fileID: 1407843134756007609}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassCliffMid (4)
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,9 +556,9 @@ GameObject:
   - component: {fileID: 7507607274840055359}
   - component: {fileID: 816693296558338471}
   - component: {fileID: 1941392610694574568}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassCliffLeft
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -665,9 +665,9 @@ GameObject:
   - component: {fileID: 8467799820522209280}
   - component: {fileID: 2139318920100210956}
   - component: {fileID: 1483442996725718019}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassCliffRight
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -812,9 +812,9 @@ GameObject:
   - component: {fileID: 2294492694588970104}
   - component: {fileID: 9164376807765888681}
   - component: {fileID: 8368911527585105369}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GrassCliffMid (2)
-  m_TagString: Untagged
+  m_TagString: Platforms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
