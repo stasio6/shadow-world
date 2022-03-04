@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
 
     string[] levels = new string[] { 
                                      "Main Menu",
-                                     "Level1-1", "Level1-2", "Level1-3", /*"Level1-4",*/ "Level1-5", // "Level1-6", // "Level1-7", "Level1-8",
+                                     "Level1-1", "Level1-2", "Level1-3", /*"Level1-4",*/ "Level1-5", "Level1-6", // "Level1-7", "Level1-8",
                                      // "Level2-1", "Level2-2", "Level2-3", "Level2-4", "Level2-5", "Level2-6", "Level2-7", "Level2-8",
                                      // "Level3-1", "Level3-2", "Level3-3", "Level3-4", "Level3-5", "Level3-6", "Level3-7", "Level3-8",
                                      // "Level4-1", "Level4-2", "Level4-3", "Level4-4", "Level4-5", "Level4-6", "Level4-7", "Level4-8",
