@@ -16,7 +16,6 @@ public class Sign : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TODO: Fix errors after player dies.
         Player player = GameObject.Find("Player").GetComponent<Player>();
         float distanceFromPlayer = Vector2.Distance(player.transform.position, transform.position);
         if (distanceFromPlayer <= distanceToInteract)

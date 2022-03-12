@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private CapsuleCollider2D ccollider;
     private Animator animator;
     private bool isClimbing;
+    private bool hasKey;
     private int ladderTouches;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         rb.gravityScale = jumpSpeed;
         isClimbing = false;
+        hasKey = false;
         ladderTouches = 0;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("DropdownPlatforms"), true);
         animator = transform.GetComponent<Animator>();
@@ -77,17 +79,22 @@ public class Player : MonoBehaviour
         // Orientation
         if (rb.velocity.x < 0)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.localScale = new Vector3(-0.2f, transform.localScale.y, transform.localScale.z);
         }
         else if (rb.velocity.x > 0)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.localScale = new Vector3(0.2f, transform.localScale.y, transform.localScale.z);
         }
 
         // Animator
-        animator.SetFloat("Speed", Math.Abs(speed * movementHorizontal));
+        animator.SetFloat("Speed", Mathf.Abs(speed * movementHorizontal));
         animator.SetBool("Grounded", IsGrounded());
         animator.SetFloat("VerticalSpeed", rb.velocity.y);
+    }
+
+    public void RemoveKey()
+    {
+        hasKey = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -104,6 +111,13 @@ public class Player : MonoBehaviour
         {
             isClimbing = true;
             ladderTouches++;
+        }
+        if (collision.gameObject.tag == "Key" && !hasKey && !isShadow)
+        {
+            hasKey = true;
+            collision.gameObject.transform.SetParent(transform);
+            collision.gameObject.transform.localPosition = new Vector3(2f, 1, -1);
+            collision.gameObject.transform.localScale *= 0.66f;
         }
     }
 
@@ -140,10 +154,8 @@ public class Player : MonoBehaviour
 
     void Death()
     {
-        // TODO: Make sure.
-        // gameObject.SetActive(false);
         rb.constraints = RigidbodyConstraints2D.FreezePosition;
-        transform.position = new Vector3(-100, -100, -100);
+        Utilities.HideObject(this.gameObject);
         GetComponent<AudioSource>().Play();
         UIManager.GetInstance().GameOver();
     }

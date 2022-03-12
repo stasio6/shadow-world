@@ -28,9 +28,8 @@ public class UIManager : MonoBehaviour
     AudioSource audioSource;
 
     string[] levels = new string[] { 
-                                     "Main Menu",
-                                     "Level1-1", "Level1-2", "Level1-3", /*"Level1-4",*/ "Level1-5", "Level1-6", // "Level1-7", "Level1-8",
-                                     // "Level2-1", "Level2-2", "Level2-3", "Level2-4", "Level2-5", "Level2-6", "Level2-7", "Level2-8",
+                                     "Level1-1", "Level1-2", "Level1-3", "Level1-4", "Level1-5", "Level1-6", "Level1-7",// "Level1-8",
+                                     "Level2-1", "Level2-2", "Level2-3", "Level2-4", "Level2-5", "Level2-6", "Level2-7", "Level2-8",
                                      // "Level3-1", "Level3-2", "Level3-3", "Level3-4", "Level3-5", "Level3-6", "Level3-7", "Level3-8",
                                      // "Level4-1", "Level4-2", "Level4-3", "Level4-4", "Level4-5", "Level4-6", "Level4-7", "Level4-8",
                                      "Victory Credits"
@@ -40,6 +39,12 @@ public class UIManager : MonoBehaviour
     {
         string currentLevel = SceneManager.GetActiveScene().name;
         return levels[Array.FindIndex(levels, element => element == currentLevel) + 1];
+    }
+
+    void PlayPersistentAudio(AudioClip clip)
+    {
+        AudioSource.PlayClipAtPoint(clip, new Vector3(), 1);
+        DontDestroyOnLoad(GameObject.Find("One shot audio"));
     }
 
     // Start is called before the first frame update
@@ -91,6 +96,7 @@ public class UIManager : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Restart"))
                     {
+                        PlayPersistentAudio(restartAudio);
                         Restart();
                     }
                     break;
@@ -100,7 +106,7 @@ public class UIManager : MonoBehaviour
                     if (Input.GetButtonDown("Jump"))
                     {
                         Resume();
-                        LoadLevel(NextLevel());
+                        LoadNextLevel();
                     }
                     break;
                 }
@@ -167,17 +173,27 @@ public class UIManager : MonoBehaviour
 
     public void Restart()
     {
-        // TODO: Not working when called from menu.
-        AudioSource.PlayClipAtPoint(restartAudio, new Vector3(), 1);
-        DontDestroyOnLoad(GameObject.Find("One shot audio"));
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Resume();
     }
 
     public void LoadLevel(string level)
     {
+        ButtonClickSound();
         Audio.Instance().UpdateSoundtrack(level);
         SceneManager.LoadScene(level);
+    }
+
+    public void LoadNextLevel()
+    {
+        string nextLevel = NextLevel();
+        Audio.Instance().UpdateSoundtrack(nextLevel);
+        SceneManager.LoadScene(nextLevel);
+    }
+
+    public void ButtonClickSound()
+    {
+        PlayPersistentAudio(clickAudio);
     }
 
     public void Quit()

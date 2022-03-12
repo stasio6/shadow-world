@@ -1,17 +1,11 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using System.IO;
-using System.Linq;
-using System.Collections;
+using UnityEditor.SceneManagement;
 
-/*[ExecuteInEditMode]
+[ExecuteInEditMode]
 public class PlayFromScene : EditorWindow
 {
-    [SerializeField] string lastScene = "";
-    [SerializeField] int targetScene = 0;
-    [SerializeField] string waitScene = null;
-    [SerializeField] bool hasPlayed = false;
-    [MenuItem("Edit/Play-Stop, But From Prelaunch Scene %0")]
+    [MenuItem("Edit/Play-Stop, But From Prelaunch Scene %&a")]
     public static void PlayFromPrelaunchScene()
     {
         if (EditorApplication.isPlaying == true)
@@ -20,10 +14,8 @@ public class PlayFromScene : EditorWindow
             return;
         }
 
-        EditorApplication.SaveCurrentSceneIfUserWantsTo();
-        EditorApplication.OpenScene("Assets/whatever/YourPrepScene.unity");
+        EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
+        EditorSceneManager.OpenScene("Assets/Scenes/Menu/Main Menu.unity");
         EditorApplication.isPlaying = true;
     }
-}*/
-
-// TODO: Make it work!!!
+}

@@ -389,8 +389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409d3c61b0d88b045a797cb4b4107ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartAudio: {fileID: 0}
-  clickAudio: {fileID: 0}
+  restartAudio: {fileID: 8300000, guid: 4569769b57cb46a4eac0fdf3dfa9415d, type: 3}
+  clickAudio: {fileID: 8300000, guid: 938ed12e9a08df14891462d2b22872e8, type: 3}
 --- !u!4 &727329910
 Transform:
   m_ObjectHideFlags: 0
