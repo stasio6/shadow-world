@@ -39,7 +39,7 @@ public class Lever : MonoBehaviour
         if (distanceFromPlayer <= distanceToInteract && IsInteractable())
         {
             transform.Find("InteractKey").gameObject.SetActive(true);
-            if (Utilities.GetInput("Interact"))
+            if (Utilities.GetInteractOnce())
             {
                 Interact();
             }
@@ -72,6 +72,7 @@ public class Lever : MonoBehaviour
 
     void Interact()
     {
+        GetComponent<AudioSource>().Play();
         toggled = !toggled;
         foreach (Lift controlledPlatform in controlledPlatforms)
         {

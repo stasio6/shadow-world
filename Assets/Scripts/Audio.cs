@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Audio : MonoBehaviour
 {
-    // TODO: Reloading first screen makes more audio objects
     private static Audio _instance;
     public static Audio Instance()
     {
@@ -33,6 +32,7 @@ public class Audio : MonoBehaviour
         {
             { "Main Menu",       0 },
             { "Level Select",    0 },
+            { "Intro",           0 },
             { "Level1-1",        1 },
             { "Level1-2",        1 },
             { "Level1-3",        1 },
@@ -57,6 +57,7 @@ public class Audio : MonoBehaviour
             { "Level3-6",        4 },
             { "Level3-7",        4 },
             { "Level3-8",        4 },
+            { "Outro",           0 },
             { "Victory Credits", 5 },
         };
 
@@ -85,5 +86,10 @@ public class Audio : MonoBehaviour
             audioSource.volume = soundtrackVolume[soundtrack[level]];
             audioSource.Play();
         }
+    }
+
+    public void Stop()
+    {
+        audioSource.Stop();
     }
 }

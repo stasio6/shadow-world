@@ -371,6 +371,7 @@ Transform:
   - {fileID: 853774749}
   - {fileID: 626805639}
   - {fileID: 2057977107}
+  - {fileID: 2084515163}
   m_Father: {fileID: 80383456}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2045,7 +2046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5940,6 +5941,75 @@ SpriteRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8476155141154911407, guid: 48d2a11934c6dca4a825192372d527ed, type: 3}
   m_PrefabInstance: {fileID: 981449504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2084515162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 66254547}
+    m_Modifications:
+    - target: {fileID: 113633289942647600, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_Name
+      value: Sign (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8095018852310768526, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+      propertyPath: message
+      value: Oh no! What happened?                                  Your world has
+        been split into two!                                            The shadow
+        has been ripped from the realm.                                 You need
+        to find a way to fix it!
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+--- !u!4 &2084515163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 918633847328529642, guid: 9b2d69be07342b049b8253ba389a1060, type: 3}
+  m_PrefabInstance: {fileID: 2084515162}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2090630225
 GameObject:

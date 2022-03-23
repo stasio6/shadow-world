@@ -21,7 +21,7 @@ public class Sign : MonoBehaviour
         if (distanceFromPlayer <= distanceToInteract)
         {
             transform.Find("InteractKey").gameObject.SetActive(true);
-            if (Utilities.GetInput("Interact"))
+            if (Utilities.GetInteractOnce())
             {
                 Interact();
             }

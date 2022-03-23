@@ -29,7 +29,7 @@ public class Door : MonoBehaviour
             if (distanceFromPlayer <= distanceToInteract && distanceFromShadowPlayer <= distanceToInteract)
             {
                 transform.Find("InteractKey").gameObject.SetActive(true);
-                if (Utilities.GetInput("Interact"))
+                if (Utilities.GetInteractOnce())
                 {
                     Interact();
                 }

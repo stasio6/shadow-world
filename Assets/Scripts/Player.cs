@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
         {
             Jump();
             animator.SetTrigger("Jump");
-            // TODO: czy trzeba resetowaæ?
         }
 
         // Ladders
@@ -103,6 +102,10 @@ public class Player : MonoBehaviour
         {
             Death();
         }
+        if (collision.gameObject.tag == "Enemy" && collision.gameObject.GetComponent<Slime>().alive)
+        {
+            Death();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -115,9 +118,30 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Key" && !hasKey && !isShadow)
         {
             hasKey = true;
+            transform.localScale = new Vector3(0.2f, transform.localScale.y, transform.localScale.z);
+            
             collision.gameObject.transform.SetParent(transform);
             collision.gameObject.transform.localPosition = new Vector3(2f, 1, -1);
             collision.gameObject.transform.localScale *= 0.66f;
+
+            if (rb.velocity.x < 0)
+            {
+                transform.localScale = new Vector3(-0.2f, transform.localScale.y, transform.localScale.z);
+            }
+            else if (rb.velocity.x > 0)
+            {
+                transform.localScale = new Vector3(0.2f, transform.localScale.y, transform.localScale.z);
+            }
+
+        }
+        if (collision.gameObject.name == "HeadDetect" && isShadow)
+        {
+            Slime slime = collision.gameObject.transform.parent.GetComponent<Slime>();
+            if (slime.alive)
+            {
+                slime.Death();
+                rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y * slime.bounce);
+            }
         }
     }
 
