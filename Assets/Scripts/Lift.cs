@@ -72,7 +72,7 @@ public class Lift : MonoBehaviour
     {
         Vector3 move = target - start;
         Vector3 direction = move.normalized;
-        Vector3 change = direction * speed / 1000 * factor;
+        Vector3 change = direction * speed * Time.deltaTime * factor;
         if (Vector3.Distance(transform.position + change, currentTarget) >= Vector3.Distance(transform.position, currentTarget))
         {
             transitionState = targetTransition;

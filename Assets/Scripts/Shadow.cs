@@ -9,7 +9,10 @@ public class Shadow : MonoBehaviour
     {
         Shadowize(GameObject.Find("Bottom"));
         Shadowize(GameObject.Find("Shadow Player"));
-        Shadowize(GameObject.Find("Shadow Door"));
+        if (GameObject.Find("Shadow Door"))
+        {
+            Shadowize(GameObject.Find("Shadow Door"));
+        }
     }
 
     // Update is called once per frame

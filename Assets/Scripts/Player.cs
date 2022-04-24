@@ -65,7 +65,6 @@ public class Player : MonoBehaviour
         }
 
         // Dropdown
-        // TODO: Trochê podskakuje na platformach -> wywalone, platformy s¹ ma³e i krótkie
         if (Input.GetButton("Drop") || rb.velocity.y > 0)
         {
             transform.Find("DropdownPlatformCollider").gameObject.SetActive(false);

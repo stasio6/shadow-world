@@ -9,6 +9,7 @@ public class Outro : MonoBehaviour
     public float waitSeconds;
     public bool outro;
     bool cutsceneFinished;
+    float avgDeltaTime;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,11 @@ public class Outro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.deltaTime > 0)
+        {
+            avgDeltaTime += Time.deltaTime;
+            avgDeltaTime /= 2;
+        }
         if (UIManager.uiStatus == UIManager.UIStatus.CutScene)
         {
             if (outro)
@@ -75,8 +81,8 @@ public class Outro : MonoBehaviour
         }
         else if (GameObject.Find("Top").transform.position.y < 5)
         {
-            GameObject.Find("Top").transform.position += Vector3.up * mergeSpeed / 1000;
-            GameObject.Find("Bot").transform.position += Vector3.down * mergeSpeed / 1000;
+            GameObject.Find("Top").transform.position += Vector3.up * mergeSpeed * avgDeltaTime;
+            GameObject.Find("Bot").transform.position += Vector3.down * mergeSpeed * avgDeltaTime;
         }
     }
 
@@ -97,8 +103,8 @@ public class Outro : MonoBehaviour
         }
         else if (GameObject.Find("Top").transform.position.y > 0)
         {
-            GameObject.Find("Top").transform.position += Vector3.down * mergeSpeed / 1000;
-            GameObject.Find("Bot").transform.position += Vector3.up * mergeSpeed / 1000;
+            GameObject.Find("Top").transform.position += Vector3.down * mergeSpeed * avgDeltaTime;
+            GameObject.Find("Bot").transform.position += Vector3.up * mergeSpeed * avgDeltaTime;
         }
     }
 

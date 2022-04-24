@@ -53,8 +53,6 @@ public class UIManager : MonoBehaviour
     {
         uiStatus = UIStatus.Gameplay;
         _instance = this;
-        // TODO: Is that needed?
-        // ScaleComponents(this.gameObject);
         audioSource = GetComponent<AudioSource>();
         Time.timeScale = 1;
     }
@@ -68,6 +66,7 @@ public class UIManager : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Restart"))
                     {
+                        PlayPersistentAudio(restartAudio);
                         Restart();
                     }
                     if (Input.GetButtonDown("Menu"))
@@ -86,7 +85,7 @@ public class UIManager : MonoBehaviour
                 }
             case UIStatus.SignText:
                 {
-                    if (Input.GetButtonDown("Jump"))
+                    if (Input.GetButtonUp("Jump"))
                     {
                         Resume();
                     }
@@ -116,29 +115,6 @@ public class UIManager : MonoBehaviour
     Component UIComponent(string name)
     {
         return transform.Find("Canvas").transform.Find(name);
-    }
-
-    void ScaleComponents(GameObject gameObject)
-    {
-        float scale = 1;
-        if (UnityEngine.Camera.main.orthographicSize == 12)
-        {
-            scale = 1.2f;
-        }
-        if (UnityEngine.Camera.main.orthographicSize == 14)
-        {
-            scale = 1.4f;
-        }
-        if (gameObject.name == "SignBackground")
-        {
-            RectTransform rectTransform = gameObject.transform.GetComponent<RectTransform>();
-            rectTransform.localScale *= scale;
-            rectTransform.localScale.Set(rectTransform.localScale.x, rectTransform.localScale.y, 2);
-        }
-        foreach (Transform child in gameObject.transform)
-        {
-            ScaleComponents(child.gameObject);
-        }
     }
 
     void Pause()
@@ -188,6 +164,7 @@ public class UIManager : MonoBehaviour
 
     public void LoadLevel(string level)
     {
+        Time.timeScale = 1;
         ButtonClickSound();
         Audio.Instance().UpdateSoundtrack(level);
         SceneManager.LoadScene(level);

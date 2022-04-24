@@ -21,7 +21,6 @@ public class KingSlime : Slime
             transform.Find("HeadDetect").gameObject.SetActive(false);
             Utilities.HideObject(gameObject);
             Utilities.HideObject(GameObject.Find("SlimeDoor"));
-            // TODO:
         }
     }
 

@@ -272,8 +272,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Main Soundtrack: Super Stickman Golf 2\nCredits: Final Fantasy VII Victory
-    Fanfare\nMain Menu: Minecraft Moog City 2\n\nDoor unlock: https://freesound.org/people/angelkunev/sounds/519065/\nDoor
+  m_Text: "Main Soundtrack: Super Stickman Golf 2\nCredits: Final Fantasy VII - Victory
+    Fanfare\nMain Menu: Minecraft - Moog City 2\n\nDoor unlock: https://freesound.org/people/angelkunev/sounds/519065/\nDoor
     squeak: https://freesound.org/people/InspectorJ/sounds/346212/\nSign: https://freesound.org/people/InspectorJ/sounds/415766/\nDeath:
     https://freesound.org/people/ThatGuyWithTheBeard/sounds/253478/\nRestart: https://freesound.org/people/michorvath/sounds/269503/\nClick:
     https://freesound.org/people/LittleRobotSoundFactory/sounds/288953/\nWorld change:
@@ -1732,7 +1732,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Super stickman golf 2
+  m_Text: Super Stickman Golf 2
 --- !u!222 &1520950479
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2245,7 +2245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1280, y: 650}
+  m_AnchoredPosition: {x: 1280, y: 550}
   m_SizeDelta: {x: 2560, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737463339
@@ -2281,9 +2281,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Keyhole: https://icon-icons.com/icon/keyhole-shape/53963
+  m_Text: 'Bayat Games - Free Platform Game Assets
 
-    Key: https://www.pngitem.com/middle/hJTbimx_vector-key-transparent-key-vector-png-png-download/
+    Henry Software - Free Pixel
+    Mob
+
+    Evolvers - Platform tile pack
+
+
+    Keyhole: https://icon-icons.com/icon/keyhole-shape/53963
+
+    Key:
+    https://www.pngitem.com/middle/hJTbimx_vector-key-transparent-key-vector-png-png-download/
 
     World
     changer: https://pngpart.com/images/bt/crystal-ball-13.png

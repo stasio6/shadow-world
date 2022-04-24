@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+﻿/*using UnityEditor;
 using UnityEngine;
 using UnityEditor.SceneManagement;
 
@@ -18,4 +18,4 @@ public class PlayFromScene : EditorWindow
         EditorSceneManager.OpenScene("Assets/Scenes/Menu/Main Menu.unity");
         EditorApplication.isPlaying = true;
     }
-}
+}*/

@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 
-// TODO: Na spadkach przez capsulecollider się rozjeżdżają symetrie, ehh :/
+// TODO: Zmienić grafikę kolców aby były bardziej widoczne (HIGH)
 
-// TODO: Click sound on buttons don't work in pause for level select and main menu
-// TODO: Nie działa też zawsze
+// TODO: Dodać background leveli (MID)
+// TODO: Dodać background menu (MID)
 
-// TODO: Uwagi Ewy (może dopisać na tabliczce "uwaga na kolce na suficie"?)
+// TODO: Brzydkie animacje gdy jest nisko i się duże skacze w bardzo niskim (LOW)
+// TODO: Dodać opóźnienie stanu grounded, żeby uniemożliwić bunny hoppowanie (np 0.5s czasu lądowania w którym nie można skakać) (LOW)
+// TODO: Doszlifować animację wspinaczki na drabinie (LOW)
+// TODO: Gracz trochę podskakuje na platformach (LOW)
+// TODO: Na spadkach przez capsulecollider się rozjeżdżają symetrie, ehh :/ (LOW)
+// TODO: Wyrzucić dziwne bolce pod dropdown platformami (LOW)
 
-// TODO: Brzydkie animacje gdy jest nisko i się duże skacze w bardzo niskim
-// TODO: Dodać opóźnienie stanu grounded, żeby uniemożliwić bunny hoppowanie (np 0.5s czasu lądowania w którym nie można skakać)
-
-// TODO: Level3-4 bad scale od sign background
+// TODO: Level 2-7 zabugowany
 
 public class Utilities : MonoBehaviour
 {

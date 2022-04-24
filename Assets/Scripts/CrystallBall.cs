@@ -34,12 +34,9 @@ public class CrystallBall : MonoBehaviour
 
     void Interact(Player player, Player shadowPlayer)
     {
-        // TODO: Improve the sound (shorten it)
         GetComponent<AudioSource>().Play();
         SwapPositions(player.gameObject, shadowPlayer.gameObject);
         SwapPositions(GameObject.Find("Door"), GameObject.Find("Shadow Door"));
-        // TODO: Chyba bardziej w klimacie bêdzie nie zmieniaæ kolorów œwiatów
-        // GameObject.Find("Shadow").GetComponent<Shadow>();
     }
 
     void SwapPositions(GameObject a, GameObject b)

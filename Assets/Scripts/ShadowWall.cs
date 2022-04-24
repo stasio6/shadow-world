@@ -8,7 +8,7 @@ public class ShadowWall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,16 +21,44 @@ public class ShadowWall : MonoBehaviour
     {
         if (collision.gameObject.name == "Shadow Player")
         {
-            GetComponent<AudioSource>().Play();
-            GetComponent<BoxCollider2D>().enabled = false;
-            StartCoroutine(CloseWall());
+            OpenWall(collision.gameObject);
         }
     }
 
-    IEnumerator CloseWall()
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == "Shadow Player")
+        {
+            OpenWall(collider.gameObject);
+        }
+    }
+
+    private void OpenWall(GameObject shadowPlayer)
+    {
+        if (!GetComponent<AudioSource>().isPlaying)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+        GetComponent<BoxCollider2D>().enabled = false;
+        StartCoroutine(CloseWall(shadowPlayer));
+    }
+
+    IEnumerator CloseWall(GameObject shadowPlayer)
     {
         yield return new WaitForSeconds(timeToClose);
-        // TODO: If still collides, don't activate (it will push player outside)
-        GetComponent<BoxCollider2D>().enabled = true;
+        BoxCollider2D wallCollider = GetComponent<BoxCollider2D>();
+        wallCollider.isTrigger = true;
+        wallCollider.enabled = true;
+        StartCoroutine(EnableCollider());
+    }
+
+    IEnumerator EnableCollider()
+    {
+        yield return new WaitForSeconds(0.1f);
+        BoxCollider2D wallCollider = GetComponent<BoxCollider2D>();
+        if (wallCollider.enabled)
+        {
+            wallCollider.isTrigger = false;
+        }
     }
 }
