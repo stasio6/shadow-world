@@ -153,13 +153,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68e33560f09edd4090c4f432d7e6c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrackClips:
+  devOSTClips:
   - {fileID: 8300000, guid: 9d457fcf9930007498fc23a12713490b, type: 3}
   - {fileID: 8300000, guid: a304db19663a6c24cabdf2d860ff6c8c, type: 3}
   - {fileID: 8300000, guid: 72c92d05370248a49a5212d076b2d67e, type: 3}
   - {fileID: 8300000, guid: 2ce98bef39a6a0d44a2956c975ad579d, type: 3}
   - {fileID: 8300000, guid: 1fcc0c621212dc3418fe5cd07a2a3a05, type: 3}
   - {fileID: 8300000, guid: 0d9a48250f935ef43af2fdb4bb97c753, type: 3}
+  prodOstClips:
+  - {fileID: 8300000, guid: dfdfbc21eeeb61f43b4040b030a63217, type: 3}
+  - {fileID: 8300000, guid: d9846bbf188d12b4bb508425ff7d9270, type: 3}
+  - {fileID: 8300000, guid: 04fe33fd002e1ed47a30bbfa67e42451, type: 3}
+  - {fileID: 8300000, guid: f0abbf9edf1a66a4c8348c14ef1b32be, type: 3}
+  - {fileID: 8300000, guid: e2c14677a716993449c15c94675e713e, type: 3}
+  - {fileID: 8300000, guid: c1332021be9e56745929735ce8613682, type: 3}
+  isProduction: 1
 --- !u!82 &1057629026
 AudioSource:
   m_ObjectHideFlags: 0

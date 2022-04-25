@@ -272,12 +272,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Main Soundtrack: Super Stickman Golf 2\nCredits: Final Fantasy VII - Victory
-    Fanfare\nMain Menu: Minecraft - Moog City 2\n\nDoor unlock: https://freesound.org/people/angelkunev/sounds/519065/\nDoor
-    squeak: https://freesound.org/people/InspectorJ/sounds/346212/\nSign: https://freesound.org/people/InspectorJ/sounds/415766/\nDeath:
-    https://freesound.org/people/ThatGuyWithTheBeard/sounds/253478/\nRestart: https://freesound.org/people/michorvath/sounds/269503/\nClick:
-    https://freesound.org/people/LittleRobotSoundFactory/sounds/288953/\nWorld change:
-    https://freesound.org/people/sound_designer_from_Turkey/sounds/613163/\n\rSlime
+  m_Text: "Main Soundtrack: VOiD1 Gaming - Platformer Music Pack LITE\n\nDoor unlock:
+    https://freesound.org/people/angelkunev/sounds/519065/\nDoor squeak: https://freesound.org/people/InspectorJ/sounds/346212/\nSign:
+    https://freesound.org/people/InspectorJ/sounds/415766/\nDeath: https://freesound.org/people/ThatGuyWithTheBeard/sounds/253478/\nRestart:
+    https://freesound.org/people/michorvath/sounds/269503/\nClick: https://freesound.org/people/LittleRobotSoundFactory/sounds/288953/\nWorld
+    change: https://freesound.org/people/sound_designer_from_Turkey/sounds/613163/\n\rSlime
     death: https://freesound.org/people/newlocknew/sounds/593909/"
 --- !u!222 &93001194
 CanvasRenderer:
@@ -1732,7 +1731,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Super Stickman Golf 2
+  m_Text: Platformer Music Pack LITE
 --- !u!222 &1520950479
 CanvasRenderer:
   m_ObjectHideFlags: 0

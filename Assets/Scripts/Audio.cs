@@ -10,7 +10,10 @@ public class Audio : MonoBehaviour
         return _instance;
     }
 
-    public AudioClip[] soundtrackClips;
+    public AudioClip[] devOSTClips;
+    public AudioClip[] prodOstClips;
+    public bool isProduction;
+    private AudioClip[] soundtrackClips;
     private Dictionary<string, int> soundtrack;
     private Dictionary<int, float> soundtrackVolume;
     private AudioSource audioSource;
@@ -26,6 +29,7 @@ public class Audio : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(this);
 
+        soundtrackClips = isProduction ? prodOstClips : devOSTClips;
         audioSource = GetComponent<AudioSource>();
 
         soundtrack = new Dictionary<string, int>()
@@ -70,6 +74,8 @@ public class Audio : MonoBehaviour
             { 4, 0.5f },
             { 5, 1 },
         };
+
+        UpdateSoundtrack("Main Menu");
     }
 
     // Update is called once per frame
